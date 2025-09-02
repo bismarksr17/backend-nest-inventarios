@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './modules/admin/users/users.module';
+import { User } from './modules/admin/users/entities/user.entity';
 
 @Module({
   imports: [
@@ -13,10 +15,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: '77663540',
       database: 'backend_nest_inventarios',
       entities: [
-        __dirname + './../**/*.entity{.ts, .js}' // busca todas las entidades
+        User
+        //__dirname + './../**/*.entity{.ts, .js}' // busca todas las entidades
       ],
-      synchronize: false  //migracion automatica desactivado
+      synchronize: true  //migracion automatica desactivado
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
