@@ -5,10 +5,12 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('users')
 export class UsersController {
+  // inyeccion de dependencias
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
+    console.log("GUARDANDO EN CONTROLADOR...", createUserDto)
     return this.usersService.create(createUserDto);
   }
 
