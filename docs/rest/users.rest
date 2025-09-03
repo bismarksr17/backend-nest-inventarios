@@ -21,3 +21,6 @@ Content-Type: application/json
 {
     "name": "Maria Modificado"
 }
+
+### eliminar
+DELETE http://localhost:3000/users/adcbdb1f-c6e4-4a8b-aaf6-5ce354af0400
