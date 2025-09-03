@@ -1,0 +1,23 @@
+### listar usuarios
+GET http://localhost:3000/users
+
+### guardar user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Maria",
+    "email": "maria@example.com",
+    "password": "A123456*123"
+}
+
+### mostrar
+GET http://localhost:3000/users/adcbdb1f-c6e4-4a8b-aaf6-5ce354af0400
+
+### modificar
+PATCH http://localhost:3000/users/adcbdb1f-c6e4-4a8b-aaf6-5ce354af0400
+Content-Type: application/json
+
+{
+    "name": "Maria Modificado"
+}

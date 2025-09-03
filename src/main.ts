@@ -7,7 +7,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // class-validator
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({
+    disableErrorMessages: false,  // habilita mensajes de error
+    whitelist: true, // elimina propiedades no deseadas
+    forbidNonWhitelisted: true, // lanza error si hay propiedades no deseadas 
+  }));
 
   // swagger
   const config = new DocumentBuilder()

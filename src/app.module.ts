@@ -12,7 +12,7 @@ import { User } from './modules/admin/users/entities/user.entity';
       host: 'localhost',
       port: 5433,
       username: 'postgres',
-      password: 'A123456*',
+      password: '77663540',
       database: 'backend_nest_inventarios',
       entities: [
         User
